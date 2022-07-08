@@ -16,6 +16,7 @@ public class UD06_01_App {
 		
 //		Variables
 		Scanner sc = new Scanner(System.in);
+		double resultado = 0;
 		
 //		Programa
 		System.out.print("Introduce el nombre de la figura la cual quieres calcular el area (Circulo, Triangulo, Cuadrado): ");
@@ -23,13 +24,13 @@ public class UD06_01_App {
 		
 		switch (respuesta.toLowerCase()) {
 		case "circulo":
-			calcularAreaCirculo(sc);
+			resultado = calcularAreaCirculo(sc);
 			break;
 		case "triangulo":
-			calcularAreaTriangulo(sc);
+			resultado = calcularAreaTriangulo(sc);
 			break;
 		case "cuadrado":
-			calcularAreaCuadrado(sc);
+			resultado = calcularAreaCuadrado(sc);
 			break;
 		default:
 			System.out.println("No has introducido un nombre correcto.");
@@ -37,22 +38,23 @@ public class UD06_01_App {
 		}
 		
 		sc.close();
+		System.out.println("Area " + respuesta.toLowerCase() + ": " + resultado);
 
 	}
 	
 //	Método calcular área circulo
-	public static void calcularAreaCirculo(Scanner sc) {
+	public static double calcularAreaCirculo(Scanner sc) {
 		
 		System.out.print("Introduce el radio del circulo: ");
 		String radioStr = sc.nextLine();
 		
 		float radio = Float.parseFloat(radioStr);
 		
-		System.out.println("Area circulo: " + (Math.pow(radio, 2)*Math.PI));
+		return (Math.pow(radio, 2)*Math.PI);
 	}
 	
 //	Método calcular área triangulo
-	public static void calcularAreaTriangulo(Scanner sc) {
+	public static double calcularAreaTriangulo(Scanner sc) {
 			
 		System.out.print("Introduce la base del triangulo: ");
 		String baseStr = sc.nextLine();
@@ -62,21 +64,18 @@ public class UD06_01_App {
 		float base = Float.parseFloat(baseStr);
 		float altura = Float.parseFloat(alturaStr);
 
-		System.out.println("Area triangulo: " + ((base * altura)/2));
+		return ((base * altura)/2);
 	}
 	
 //	Método calcular área cuadrado
-	public static void calcularAreaCuadrado(Scanner sc) {
+	public static double calcularAreaCuadrado(Scanner sc) {
 		
 		System.out.print("Introduce un lado del cuadrado: ");
-		String lado1Str = sc.nextLine();
-		System.out.print("Introduce el otro lado del triangulo: ");
-		String lado2Str = sc.nextLine();
+		String ladoStr = sc.nextLine();
 		
-		float lado1 = Float.parseFloat(lado1Str);
-		float lado2 = Float.parseFloat(lado2Str);
+		float lado = Float.parseFloat(ladoStr);
 
-		System.out.println("Area cuadrado: " + (lado1 * lado2));
+		return (lado * lado);
 	}
 
 }
