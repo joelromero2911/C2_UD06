@@ -21,6 +21,7 @@ public class UD06_04_App {
 
 	}
 	
+//	Método calcular factorial del número introducido por parametro
 	public static void calcularFactorial(int num) {
 		
 		int fact = 1;
