@@ -22,6 +22,8 @@ public class UD06_02_App {
 		System.out.print("Maximo: ");
 		int max = Integer.parseInt(sc.nextLine());
 		
+		sc.close();
+		
 		for(int cont = 0; cont < numTotal; cont++) {
 			System.out.println(randomNum = getRandomNum(min, max));
 		}
